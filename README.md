@@ -1,8 +1,6 @@
 <p align="center">
   <img src="https://rajaserverpremium.my.id/pp.jpg" /></p>
 
-![IMAGE](https://github.com/MyRidwan/MyRidwan/blob/ipuk/20221010_001912.png)
-
 ### INSTALL SCRIPT 
 <pre><code>apt install screen -y;wget -q https://raw.githubusercontent.com/arivpnstores/ARISCTUNNEL_v7/main/setup.sh;chmod +x setup.sh;screen -S ARISCTUNNELV7 ./setup.sh
 </code></pre>
