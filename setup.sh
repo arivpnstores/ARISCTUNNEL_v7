@@ -128,9 +128,40 @@ echo "IP=$dnss" > /var/lib/ipvps.conf
 }
 clear
 cd
+echo -e "${green}┌──────────────────────────────────────────┐${NC}"
+echo -e "${green}│      PROCESS POINTING DOMAIN RANDOM      │${NC}"
+echo -e "${green}└──────────────────────────────────────────┘${NC}"
 fun_bar 'res1'
 }
 function Pasang(){
+    fun_bar() {
+    CMD[0]="$1"
+    CMD[1]="$2"
+    (
+        [[ -e $HOME/fim ]] && rm $HOME/fim
+        ${CMD[0]} -y >/dev/null 2>&1
+        ${CMD[1]} -y >/dev/null 2>&1
+        touch $HOME/fim
+    ) >/dev/null 2>&1 &
+    tput civis
+    echo -ne "  \033[0;33mUpdate Domain.. \033[1;37m- \033[0;33m["
+    while true; do
+        for ((i = 0; i < 18; i++)); do
+            echo -ne "\033[0;32m#"
+            sleep 0.1s
+        done
+        [[ -e $HOME/fim ]] && rm $HOME/fim && break
+        echo -e "\033[0;33m]"
+        sleep 1s
+        tput cuu1
+        tput dl1
+        echo -ne "  \033[0;33mUpdate Domain... \033[1;37m- \033[0;33m["
+    done
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
+    tput cnorm
+}
+
+res1() {
 cd
 wget ${REPO}tools.sh &> /dev/null
 chmod +x tools.sh 
@@ -140,6 +171,12 @@ start=$(date +%s)
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
+}
+
+echo -e "${green}┌──────────────────────────────────────────┐${NC}"
+echo -e "${green}│        PROCESS INSTALL ALL TOOLS         │${NC}"
+echo -e "${green}└──────────────────────────────────────────┘${NC}"
+fun_bar 'res1'
 }
 Pasang
 domain
