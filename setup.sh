@@ -3,7 +3,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 REPO="https://raw.githubusercontent.com/arivpnstores/ARISCTUNNEL_v7/main/"
 # Valid Script
-ipsaya=$(curl -sS ipv4.icanhazip.com)
+ipsaya=$(curl -s ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
 data_ip="https://raw.githubusercontent.com/arivpnstores/izin/main/ip"
@@ -56,22 +56,6 @@ fi
 secs_to_human() {
 echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
-mkdir -p /etc/xray
-mkdir -p /var/lib/ >/dev/null 2>&1
-echo "IP=" >> /var/lib/ipvps.conf
-clear
-echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
-echo -e "$green                                                                                         $NC"
-echo -e "$green____ _  _ ___ ____    _ _  _ ____ ___ ____ _    _   $NC"
-echo -e "$green|__| |  |  |  |  |    | |\ | [__   |  |__| |    |   $NC"
-echo -e "$green|  | |__|  |  |__|    | | \| ___]  |  |  | |___ |___$NC"
-echo -e "$green                                                      $NC"                                     
-echo -e "$green                ____ ____ _  _$NC" 
-echo -e "$green                [__  [__  |__|$NC"
-echo -e "$green                ___] ___] |  |$NC"
-echo -e "$green                $NC"                                                                                                                          
-echo -e "$green♥ TERIMAKSIH TELAH MEMAKAI SCRIPT ARI-STORE ♥$NC"
-
 function domain(){
 fun_bar() {
     CMD[0]="$1"
@@ -157,6 +141,24 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
 }
+Pasang
+domain
+mkdir -p /etc/xray
+mkdir -p /var/lib/ >/dev/null 2>&1
+echo "IP=" >> /var/lib/ipvps.conf
+clear
+echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
+echo -e "$green                                                                                         $NC"
+echo -e "$green ____ _  _ ___ ____    _ _  _ ____ ___ ____ _    _   $NC"
+echo -e "$green |__| |  |  |  |  |    | |\ | [__   |  |__| |    |   $NC"
+echo -e "$green |  | |__|  |  |__|    | | \| ___]  |  |  | |___ |___$NC"
+echo -e "$green                                                     $NC"                                     
+echo -e "$green                ____ ____ _  _$NC" 
+echo -e "$green                [__  [__  |__|$NC"
+echo -e "$green                ___] ___] |  |$NC"
+echo -e "$green                $NC"                                                                                                                          
+echo -e "$green♥ TERIMAKSIH TELAH MEMAKAI SCRIPT ARI-STORE ♥$NC"
+echo "ARISCTUNNEL V7" > /etc/xray/username
 function Installasi(){
 fun_bar() {
     CMD[0]="$1"
@@ -199,7 +201,6 @@ fun_bar() {
     echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
     tput cnorm # Tampilkan kursor kembali
 }
-
 
 
 res2() {
@@ -347,7 +348,7 @@ domain=$(cat /etc/xray/domain)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
-MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(curl -s ipv4.icanhazip.com)
 IZIN=$(curl -sS https://raw.githubusercontent.com/arivpnstores/izin/main/ip | grep $MYIP | awk '{print $3}' )
 d1=$(date -d "$IZIN" +%s)
 d2=$(date -d "$today" +%s)

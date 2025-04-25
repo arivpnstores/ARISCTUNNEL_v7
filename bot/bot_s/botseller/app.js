@@ -19,7 +19,7 @@ const PAYDISINI_KEY = vars.PAYDISINI_KEY;
 const BOT_TOKEN = vars.BOT_TOKEN;
 const port = vars.PORT || 50123;
 const ADMIN = vars.USER_ID; 
-const NAMA_STORE = vars.NAMA_STORE || '@Kytxz';
+const NAMA_STORE = vars.NAMA_STORE || '@ARI_VPN_STORE';
 const bot = new Telegraf(BOT_TOKEN);
 const adminIds = ADMIN;
 console.log('Bot initialized');

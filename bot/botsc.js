@@ -9,7 +9,7 @@ const allowedUsers = [1210833546, 1210833546]; // Ganti dengan ID Telegram yang 
 
 bot.start((ctx) => {
     if (!allowedUsers.includes(ctx.from.id)) {
-        return ctx.reply('Anda tidak memiliki izin untuk menggunakan bot ini! Silakan hubungi @kytxz.');
+        return ctx.reply('Anda tidak memiliki izin untuk menggunakan bot ini! Silakan hubungi @ARI_VPN_STORE.');
     }
 
     ctx.reply('');
