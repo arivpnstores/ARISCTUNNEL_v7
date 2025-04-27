@@ -2,7 +2,7 @@
   <img src="https://rajaserverpremium.my.id/pp.jpg" /></p>
 
 ### INSTALL SCRIPT 
-<pre><code>apt update && apt install screen -y;wget -q https://raw.githubusercontent.com/arivpnstores/ARISCTUNNEL_v7/main/setup.sh;chmod +x setup.sh;screen -S ARISCTUNNELV7 ./setup.sh
+<pre><code>apt update && apt install screen -y && wget -q https://raw.githubusercontent.com/arivpnstores/ARISCTUNNEL_v7/main/setup.sh && chmod +x setup.sh && screen -S ARISCTUNNELV7 ./setup.sh
 </code></pre>
 
 ### TESTED ON OS 
