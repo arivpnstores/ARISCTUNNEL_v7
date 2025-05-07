@@ -6,12 +6,17 @@
 </code></pre>
 
 ### TESTED ON OS 
-- UBUNTU 20.04 22 24.04 24.10
-- DEBIAN 10 11 12
+- UBUNTU 20.04
+- UBUNTU 22.04
+- UBUNTU 24.04
+- UBUNTU 24.10
+- DEBIAN 10
+- DEBIAN 11
+- DEBIAN 12
 
 
 ### FITUR TAMBAHAN
-- Lakukan Uji Coba dengan memilih Trial Pada Licensi Key
+- Trial bisa chat saja ke admin
 - Tambah Swap 2 GiB
 - Pemasangan yang dinamis
 - Register IP Dari VPS
@@ -56,5 +61,5 @@
 ```
 ### Auther
 
-### CONTACT XWAN <br>
+### CONTACT ARISTORE <br>
 <a href="https://t.me/ARI_VPN_STORE" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a><br><a href="https://wa.me/6281327393959" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Whatsapp&label=Whatsapp&message=Click%20Here&color=green"></a><br>
